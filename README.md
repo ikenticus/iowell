@@ -13,21 +13,23 @@ Write a long-lived service in JavaScript/NodeJS, that:
 * It’s best to create a stand-alone repo on Github/Gitlab/Bitbucket and share it privately with us, or alternatively send code as a packaged folder. We must be able to build it relatively easily on our end.
 
 ### Install
-1. Clone from this repository:
+* Clone from this repository:
 ```
 git clone https://github.com/ikenticus/iowell
 cd iowell
 ```
-1. Install dependencies: `npm install`
-1. Start webserver: `npm start`
+* Install dependencies: `npm install`
+* Start webserver: `npm start`
 
 ### Verify
 
-In general, Postman can be used to GET or POST amongst other methods. However this repository also includes options to verify the endspoints via the following methods
+With the server running you can access the Swagger interface: http://localhost:9000/help
+
+In general, Postman can be used to GET or POST amongst other methods. However this repository also includes options to verify the endpoints via the following methods
 * input:
-    CLI: `curl -X POST "http://localhost:9000/input" -H "Content-Type: text/plain" -d "key"`
-    Swagger: http://localhost:9000/help/index.html#/default/post_input
+    * CLI: `curl -X POST "http://localhost:9000/input" -H "Content-Type: text/plain" -d "key"`
+    * Swagger: http://localhost:9000/help/index.html#/default/post_input
 * query:
-    Browser: `http://localhost:9000/query?key=key`
-    CLI: `curl "http://localhost:9000/query?key=key"`
-    Swagger: http://localhost:9000/help/index.html#/default/get_query
+    * Browser: `http://localhost:9000/query?key=key`
+    * CLI: `curl "http://localhost:9000/query?key=key"`
+    * Swagger: http://localhost:9000/help/index.html#/default/get_query
