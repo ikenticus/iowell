@@ -1,0 +1,32 @@
+{
+  "name": "iowell",
+  "version": "1.0.0",
+  "description": "Input/Output Sample",
+  "main": "index.js",
+  "author": "Kent Lee",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikenticus/iowell"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "lodash": "^4.17.20",
+    "lowdb": "^1.0.0",
+    "moment-timezone": "^0.5.31",
+    "restify": "^8.5.1",
+    "restify-swagger-jsdoc": "^3.2.4"
+  },
+  "scripts": {
+    "fix": "./node_modules/.bin/eslint ./lib/ ./views/ index.js --fix",
+    "lint": "./node_modules/.bin/eslint ./lib/ ./views/ index.js",
+    "start": "node index.js"
+  }
+}

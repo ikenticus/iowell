@@ -1,0 +1,99 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Input/Output Sample",
+    "contact": {
+      "name": "Kent Lee"
+    }
+  },
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "definitions": {
+    "Error": {
+      "type": "object",
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/input": {
+      "post": {
+        "summary": "Input for `key`",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Arbitrary `key` to input",
+            "type": "string",
+            "in": "body"
+          }
+        ]
+      }
+    },
+    "/query": {
+      "get": {
+        "summary": "Query for `key`",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Arbitrary `key` to query for",
+            "type": "string",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Number of occurences of `key`"
+          },
+          "500": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Status diagnostics page",
+        "parameters": [
+          {
+            "format": {
+              "name": "format",
+              "description": "Display additional status format",
+              "enum": [
+                "full"
+              ],
+              "type": "string",
+              "in": "query"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status response"
+          },
+          "500": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}
