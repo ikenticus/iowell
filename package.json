@@ -29,8 +29,8 @@
   },
   "scripts": {
     "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive test/unit -R spec",
-    "fix": "./node_modules/.bin/eslint ./lib/ ./views/ index.js --fix",
-    "lint": "./node_modules/.bin/eslint ./lib/ ./views/ index.js",
+    "fix": "./node_modules/.bin/eslint ./lib/ ./test/ ./views/ index.js --fix",
+    "lint": "./node_modules/.bin/eslint ./lib/ ./test/ ./views/ index.js",
     "start": "node index.js",
     "test": "npm run lint && npm run unit",
     "unit": "mocha --recursive test/unit"
