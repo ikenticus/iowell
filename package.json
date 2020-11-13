@@ -10,11 +10,14 @@
     "url": "https://github.com/ikenticus/iowell"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1"
+    "eslint-plugin-promise": "^4.2.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.2.1"
   },
   "dependencies": {
     "config": "^3.3.2",
@@ -25,8 +28,11 @@
     "restify-swagger-jsdoc": "^3.2.4"
   },
   "scripts": {
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive test/unit -R spec",
     "fix": "./node_modules/.bin/eslint ./lib/ ./views/ index.js --fix",
     "lint": "./node_modules/.bin/eslint ./lib/ ./views/ index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "npm run lint && npm run unit",
+    "unit": "mocha --recursive test/unit"
   }
 }
